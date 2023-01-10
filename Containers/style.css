@@ -9,6 +9,7 @@ body {
     padding: 1rem;
     margin: 0;
     font-family: "Atkinson Hyperlegible", sans-serif;
+   
 }
 h1, h2 {
     text-align: center;
@@ -17,12 +18,41 @@ h1, h2 {
     display: block;
    /* opacity: 1; */
 }
-.page-sidebar    {
-    background-color: aliceblue;
+.explain {
+    font-size: 1.1rem;
+    color: purple;
+}
+.page-wrap {
+  min-height: calc(100vh - 10px);
+  display: grid;
+  grid-template-columns: minmax(10px, 400px) minmax(10px, 2fr);
+  grid-template-rows: min-content min-content 1fr min-content;
+  gap: 1px;
+  container-type: inline-size;
+  container-name: wrap;
+}
+.page-header {
+  grid-column: 1/-1;
+}
+.page-sidebar {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  background-color: aliceblue;
 }
 figure img {
     max-width: 100%;
 }
+@container wrap (max-width: 600px) {
+  .page-wrap {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+  .page-wrap > * {
+    grid-column: 1/-1 !important;
+    grid-row: auto !important;
+  }
+}
+
 @supports (container-type: inline-size) {
     .noSupport {
       /* opacity: 0; */
