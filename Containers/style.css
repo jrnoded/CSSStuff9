@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 1rem;
+    margin: 0;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+}
+h1, h2 {
+    text-align: center;
+}
+.nosupport {
+    display: block;
+   /* opacity: 1; */
+}
+.page-sidebar    {
+    background-color: aliceblue;
+}
+figure img {
+    max-width: 100%;
+}
+@supports (container-type: inline-size) {
+    .noSupport {
+      /* opacity: 0; */
+      display: none;        
+    }
+}
