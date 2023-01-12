@@ -24,7 +24,7 @@ h1 {
 .page-wrap {
   min-height: calc(100vh - 10px);
   display: grid;
-  grid-template-columns: minmax(10px, 400px) minmax(10px, 3fr);
+  grid-template-columns: minmax(10px, 350px) minmax(10px, 3fr);
   grid-template-rows: min-content min-content 1fr min-content;
   gap: 1px;
   container-type: inline-size;
@@ -46,7 +46,7 @@ figure img {
 figure figcaption {
   text-align: center;
 }
-@container wrap (max-width: 600px) {
+@container wrap (max-width: 700px) {
   .page-wrap {
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -73,7 +73,7 @@ figure figcaption {
   }
 }
 @supports not (container-type: inline-size) {
-  @media (max-width: 600px) {
+  @media (max-width:700px) {
     .page-wrap {
       grid-template-columns: 100%;
       grid-template-rows: auto;
