@@ -1,69 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    padding: 1rem;
-    margin: 0;
-    font-family: "Atkinson Hyperlegible", sans-serif;
+  min-height: 100vh;
+  padding: 1rem;
+  margin: 0;
+  font-family: "Atkinson Hyperlegible", sans-serif;
 }
-h1,
-h2 {
-    text-align: center;
+h1 {
+  text-align: center;
 }
 .nosupport {
-    display: block;
-    /* opacity: 1; */
+  display: block;
+  /* opacity: 1; */
 }
 .explain {
-    font-size: 1.1rem;
-    color: purple;
+  font-size: 1.1rem;
+  color: purple;
 }
 .page-wrap {
-    min-height: calc(100vh - 10px);
-    display: grid;
-    grid-template-columns: minmax(10px, 400px) minmax(10px, 2fr);
-    grid-template-rows: min-content min-content 1fr min-content;
-    gap: 1px;
-    container-type: inline-size;
-    container-name: wrap;
+  min-height: calc(100vh - 10px);
+  display: grid;
+  grid-template-columns: minmax(10px, 400px) minmax(10px, 3fr);
+  grid-template-rows: min-content min-content 1fr min-content;
+  gap: 1px;
+  container-type: inline-size;
+  container-name: wrap;
 }
 .page-header {
-    grid-column: 1/-1;
+  grid-column: 1/-1;
 }
 .page-sidebar {
-    grid-column: 1/2;
-    grid-row: 2/4;
-    background-color: aliceblue;
-    container-type: inline-size;
-    container-name: sidebar;
+  grid-column: 1/2;
+  grid-row: 2/4;
+  background-color: aliceblue;
+  container-type: inline-size;
+  container-name: sidebar;
 }
 figure img {
-    max-width: 100%;
+  max-width: 100%;
+}
+figure figcaption {
+  text-align: center;
 }
 @container wrap (max-width: 600px) {
-    .page-wrap {
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-    }
-    .page-wrap > * {
-        grid-column: 1/-1 !important;
-        grid-row: auto !important;
-    }
+  .page-wrap {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+  .page-wrap > * {
+    grid-column: 1/-1 !important;
+    grid-row: auto !important;
+  }
 }
 @container sidebar (max-width: 300px) {
   figure img {
     display: none;
-  } {
-
+  }
+   {
   }
 }
 @supports (container-type: inline-size) {
-    .noSupport {
-        /* opacity: 0; */
-        display: none;
+  .noSupport {
+    /* opacity: 0; */
+    display: none;
+  }
+  .explain {
+    color: red;
+  }
+}
+@supports not (container-type: inline-size) {
+  @media (max-width: 600px) {
+    .page-wrap {
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
     }
+    .page-wrap > * {
+      grid-column: 1/-1 !important;
+      grid-row: auto !important;
+    }
+  }
 }
