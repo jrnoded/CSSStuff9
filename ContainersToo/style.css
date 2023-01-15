@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    background: skyblue;
+}
+.container {
+    display:grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: .5rem;
+    container: container / inline-size;
+}
+   
+.card {
+
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: .25rem;
+    border: 1px solid black;
+    
+
+}
+.card p {
+    padding-left: .5rem;
+}
+.card img {
+   width: 100%;
+}
+
+@container container (max-width: 800px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+}
