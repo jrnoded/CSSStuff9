@@ -1,0 +1,48 @@
+.panel {
+    position: relative;
+    font-size: 1.5vmin;
+    height: 20em;
+    width: 20em;
+    background-color: #872657;
+    box-shadow: 0 0 3em 0 rgba(0, 0, 0, 0.6);
+}
+
+.panel::before,
+.panel::after {
+    content: "";
+    display: block;
+}
+.panel::before {
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(at 50% 50%, #ff2800 45deg, #00f2b6 45deg 135deg, #002395 135deg 225deg, #e6a8d7 225deg 315deg, #ff2800 315deg) left 50% top 0% /
+        10% 10%;
+    background-repeat: repeat;
+}
+
+.panel::after {
+    content: "conic gradients";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    margin-top: 0.5em;
+    font-family: system-ui, sans-serif;
+    font-size: 3em;
+    color: #301934;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    background: #ffc40c;
+    background-size: cover;
+    display: grid;
+    /* grid: auto / repeat(2, 1fr); */
+    place-items: center;
+}

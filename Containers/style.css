@@ -23,6 +23,8 @@ h1 {
 }
 .page-wrap {
   min-height: calc(100vh - 10px);
+  max-width: 960px;
+  margin: auto;
   display: grid;
   grid-template-columns: minmax(10px, 350px) minmax(10px, 3fr);
   grid-template-rows: min-content min-content 1fr min-content;
