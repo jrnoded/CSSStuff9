@@ -21,7 +21,7 @@
 }
 
 .panel::after {
-    content: "conic gradients";
+    content: "Conic Gradients";
     position: absolute;
     top: 100%;
     left: 50%;
